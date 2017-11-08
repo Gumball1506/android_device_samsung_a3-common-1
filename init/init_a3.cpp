@@ -29,9 +29,11 @@
 
 #include <init_msm8916.h>
 
+using android::base::GetProperty;
+
 void init_target_properties(void)
 {
-	std::string bootloader = property_get("ro.bootloader");
+	std::string bootloader = GetProperty("ro.bootloader","");
 
 	char *bootloader_str = NULL;
 	char *build_id = NULL;
